@@ -16,14 +16,13 @@ public class Printer {
         return this.toner;
     }
 
-    public boolean print(int pages, int copies){
+    public void print(int pages, int copies){
         int sheetsToPrint = pages * copies;
+        int prevSheets = this.sheets;
         int prevToner = this.toner;
         if (this.sheets >= sheetsToPrint){
             this.toner = prevToner - sheetsToPrint;
-            return true;
-        } else {
-            return false;
+            this.sheets = prevSheets - sheetsToPrint;
         }
     }
 }
