@@ -9,32 +9,32 @@ public class WaterBottleTest {
 
     @Before
     public void before(){
-        waterBottle = new WaterBottle(100);
+        this.waterBottle = new WaterBottle();
     }
 
     @Test
     public void volumeStarts100(){
-        assertEquals(100, waterBottle.getVolume());
+        assertEquals(100, this.waterBottle.getVolume());
     }
 
     @Test
     public void drinkFunctionReducesBy10(){
-        waterBottle.drink();
-        waterBottle.drink();
-        assertEquals(80, waterBottle.getVolume());
+        this.waterBottle.drink();
+        this.waterBottle.drink();
+        assertEquals(80, this.waterBottle.getVolume());
     }
 
     @Test
     public void emptyDrainsVolume(){
-        waterBottle.empty();
-        assertEquals(0, waterBottle.getVolume());
+        this.waterBottle.empty();
+        assertEquals(0, this.waterBottle.getVolume());
     }
 
     @Test
 
     public void fillReturnsTo100(){
-        waterBottle.empty();
-        waterBottle.fill();
-        assertEquals(100, waterBottle.getVolume());
+        this.waterBottle.empty();
+        this.waterBottle.fill();
+        assertEquals(100, this.waterBottle.getVolume());
     }
 }

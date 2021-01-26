@@ -18,11 +18,9 @@ public class Printer {
 
     public void print(int pages, int copies){
         int sheetsToPrint = pages * copies;
-        int prevSheets = this.sheets;
-        int prevToner = this.toner;
         if (this.sheets >= sheetsToPrint){
-            this.toner = prevToner - sheetsToPrint;
-            this.sheets = prevSheets - sheetsToPrint;
+            this.toner -= sheetsToPrint;
+            this.sheets -= sheetsToPrint;
         }
     }
 }
